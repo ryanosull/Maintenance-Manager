@@ -1,6 +1,7 @@
 `bundle install`
-this is a test
+`bundle exec rake server`
 
+`rake console`
 
 
 

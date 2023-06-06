@@ -1,12 +1,12 @@
-puts "🌱 Seeding spices..."
+puts "🌱 Seeding..."
 
-puts "destroying all"
+puts "destroying all...."
 Owner.destroy_all
 MaintenanceRequest.destroy_all
 Unit.destroy_all
-puts "DESTROYED!1! AHHH NOOOOOOOO"
+puts "DESTROYED!"
 
-puts "seeding owners"
+puts "seeding owners..."
 o1 = Owner.create(name: "Kyle Rieman", total_units_owned: 3)
 o2 = Owner.create(name: "Joe Decker", total_units_owned: 2)
 o3 = Owner.create(name: "Keith Strausser", total_units_owned: 1)
