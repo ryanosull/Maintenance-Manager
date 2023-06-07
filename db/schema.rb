@@ -10,6 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2023_01_03_235355) do
+
+  create_table "maintenance_requests", force: :cascade do |t|
+    t.string "urgency"
+    t.string "description"
+    t.float "expected_cost"
+    t.float "actual_cost"
+    t.string "date_opened"
+    t.string "date_closed"
+    t.integer "unit_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["unit_id"], name: "index_maintenance_requests_on_unit_id"
+  end
+
+  create_table "owners", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_number"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "units", force: :cascade do |t|
+    t.string "address"
+    t.string "current_tenant"
+    t.boolean "open_request?"
+    t.integer "owner_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
