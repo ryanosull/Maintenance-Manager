@@ -7,6 +7,8 @@ class CreateMaintenanceRequests < ActiveRecord::Migration[6.1]
       t.float   :actual_cost
       t.string  :date_opened
       t.string  :date_closed
+
+      t.belongs_to  :unit
       
       t.timestamps
     end

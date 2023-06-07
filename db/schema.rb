@@ -19,13 +19,15 @@ ActiveRecord::Schema.define(version: 2023_01_03_235355) do
     t.float "actual_cost"
     t.string "date_opened"
     t.string "date_closed"
+    t.integer "unit_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["unit_id"], name: "index_maintenance_requests_on_unit_id"
   end
 
   create_table "owners", force: :cascade do |t|
     t.string "name"
-    t.integer "total_units_owned"
+    t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -35,11 +37,8 @@ ActiveRecord::Schema.define(version: 2023_01_03_235355) do
     t.string "current_tenant"
     t.boolean "open_request?"
     t.integer "owner_id"
-    t.integer "maintenancerequest_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["maintenancerequest_id"], name: "index_units_on_maintenancerequest_id"
-    t.index ["owner_id"], name: "index_units_on_owner_id"
   end
 
 end
