@@ -7,11 +7,11 @@ Unit.destroy_all
 puts "DESTROYED!"
 
 puts "seeding owners..."
-o1 = Owner.create(name: "Kyle Rieman", total_units_owned: 3)
-o2 = Owner.create(name: "Joe Decker", total_units_owned: 2)
-o3 = Owner.create(name: "Keith Strausser", total_units_owned: 1)
-o4 = Owner.create(name: "Clay Henry", total_units_owned: 1)
-o5 = Owner.create(name: "Bob Brady", total_units_owned: 1)
+o1 = Owner.create(name: "Kyle Rieman", phone_number: "(111)-111-") #lets get faker gem involved here and in other places. perhaps money gem as well.
+o2 = Owner.create(name: "Joe Decker", phone_number: 2)
+o3 = Owner.create(name: "Keith Strausser", phone_number: 1)
+o4 = Owner.create(name: "Clay Henry", phone_number: 1)
+o5 = Owner.create(name: "Bob Brady", phone_number: 1)
 puts "OWNERS seeded"
 
 puts "seeding maintenance requests..."
@@ -37,13 +37,13 @@ u7 = Unit.create(address: "1 Broadway Blvd. Unit 2 Columbia, MO 65201", current_
 u8 = Unit.create(address: "420 Pleasant St. Columbia, MO 65203", current_tenant: "Bob Marley", open_request?: false, owner_id: o1.id, maintenancerequest_id: m8.id)
 puts 'UNITS seeded'
 
-
 puts "✅ Done seeding!"
 
 
-#maintreq should be join table (belong to owner, belong to unit). 
+#maintreq should be join table (belong to owner, belong to unit).  !!!!!  -scratch that!
 
-#newmaintreq should have owner ID and unit ID.
+#newmaintreq should have owner ID and unit ID. - review all seed data
+    #unit needs owner ID
 
 #going to have to review migrations, etc. in order to fix some things here. 
 
@@ -53,13 +53,20 @@ puts "✅ Done seeding!"
     # - lets add in a column for owner name, to the right of Owner ID in units overview. 
     #from the unit overview, I can see which unit has an open request. 
 
+    #full CRUD on maint reqs. update form to update actual cost, etc. dynamic form. 
+
 #in open reqs, I can 
     #see all info about requests, inlcluding tenant and owner
     #delete a request (in case of mistake, etc.)
     #update the open request to closed - once this is done I should no longer see the request (as it has been marked closed) 
+
             #this means that open_req boolean needs to be in maintreq, not in unit.
+
         #update actual cost - we make note of expected cost while subbing form, and actual cost at time of closing the open request.
 
 
     #in all (past) requests, i can
         #see all requests, including those currently open and reqs that have been closed. 
+
+
+    #lets add an owner overview as well. 
