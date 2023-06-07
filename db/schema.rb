@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2023_01_03_235355) do
     t.integer "owner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["owner_id"], name: "index_units_on_owner_id"
   end
 
 end

@@ -5,7 +5,7 @@ class CreateUnits < ActiveRecord::Migration[6.1]
       t.string  :current_tenant
       t.boolean :open_request?
 
-      t.integer :owner_id
+      t.belongs_to :owner
 
       t.timestamps
     end
