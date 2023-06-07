@@ -8,27 +8,6 @@ MaintenanceRequest.destroy_all
 Owner.destroy_all
 puts "DESTROYED!"
 
-
-puts "seeding maintenance requests..."
-m1 = MaintenanceRequest.create(urgency: "low", description: "back porch light not working", expected_cost: 150.00, actual_cost: 5.29, date_opened: "2023-05-17", date_closed: nil, unit_id: u1.id )
-
-m2 = MaintenanceRequest.create(urgency: "medium", description: "freezer not staying cold", expected_cost: 250.00, actual_cost: 752.36, date_opened: '2023-02-16', date_closed: nil, unit_id: u2.id )
-
-m3 = MaintenanceRequest.create(urgency: "high", description: "front window glass broken", expected_cost: 100.00, actual_cost: 125.98, date_opened: '2022-12-09', date_closed: nil, unit_id: u3.id )
-
-m4 = MaintenanceRequest.create(urgency: "low", description: "lots of ants on back deck", expected_cost: 15.00, actual_cost: 15.00, date_opened: '2022-11-03', date_closed: nil, unit_id: u3.id )
-
-m5 = MaintenanceRequest.create(urgency: "medium", description: "gfci outlet in bathroom keeps resetting", expected_cost: 20.00, actual_cost: 20.00, date_opened: '2022-12-26', date_closed: nil, unit_id: u2.id )
-
-m6 = MaintenanceRequest.create(urgency: "high", description: "smoke coming from furnace", expected_cost: 500.00, actual_cost: 1385.69, date_opened: '2023-01-08', date_closed: nil, unit_id: u4.id)
-
-m7 = MaintenanceRequest.create(urgency: "low", description: "critter scurrying sound coming from attic", expected_cost: 40.00, actual_cost: 20.00, date_opened: '2023-02-17', date_closed: '2023-02-19', unit_id: u5.id)
-
-m8 = MaintenanceRequest.create(urgency: "medium", description: "front storm door off hinges", expected_cost: 60.00, actual_cost: 20.25, date_opened: '2023-03-17', date_closed: '2023-03-18', unit_id: u5.id)
-puts "MAINTENANCE REQS SEEDED"
-
-
-
 puts "seeding owners..."
 o1 = Owner.create(name: "Kyle Rieman", phone_number: Faker::PhoneNumber.cell_phone)
 
@@ -58,6 +37,29 @@ u7 = Unit.create(address: "1 Broadway Blvd. Unit 2 Columbia, MO 65201", current_
 
 u8 = Unit.create(address: "420 Pleasant St. Columbia, MO 65203", current_tenant: "Bob Marley", open_request?: false, owner_id: o1.id)
 puts 'UNITS seeded'
+
+puts "seeding maintenance requests..."
+m1 = MaintenanceRequest.create(urgency: "low", description: "back porch light not working", expected_cost: 150.00, actual_cost: 5.29, date_opened: "2023-05-17", date_closed: nil, unit_id: u1.id )
+
+m2 = MaintenanceRequest.create(urgency: "medium", description: "freezer not staying cold", expected_cost: 250.00, actual_cost: 752.36, date_opened: '2023-02-16', date_closed: nil, unit_id: u2.id )
+
+m3 = MaintenanceRequest.create(urgency: "high", description: "front window glass broken", expected_cost: 100.00, actual_cost: 125.98, date_opened: '2022-12-09', date_closed: nil, unit_id: u3.id )
+
+m4 = MaintenanceRequest.create(urgency: "low", description: "lots of ants on back deck", expected_cost: 15.00, actual_cost: 15.00, date_opened: '2022-11-03', date_closed: nil, unit_id: u3.id )
+
+m5 = MaintenanceRequest.create(urgency: "medium", description: "gfci outlet in bathroom keeps resetting", expected_cost: 20.00, actual_cost: 20.00, date_opened: '2022-12-26', date_closed: nil, unit_id: u2.id )
+
+m6 = MaintenanceRequest.create(urgency: "high", description: "smoke coming from furnace", expected_cost: 500.00, actual_cost: 1385.69, date_opened: '2023-01-08', date_closed: nil, unit_id: u4.id)
+
+m7 = MaintenanceRequest.create(urgency: "low", description: "critter scurrying sound coming from attic", expected_cost: 40.00, actual_cost: 20.00, date_opened: '2023-02-17', date_closed: '2023-02-19', unit_id: u5.id)
+
+m8 = MaintenanceRequest.create(urgency: "medium", description: "front storm door off hinges", expected_cost: 60.00, actual_cost: 20.25, date_opened: '2023-03-17', date_closed: '2023-03-18', unit_id: u5.id)
+puts "MAINTENANCE REQS SEEDED"
+
+
+
+
+
 
 puts "✅ Done seeding!"
 
