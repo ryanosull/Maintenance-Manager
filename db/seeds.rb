@@ -1,10 +1,22 @@
 puts "🌱 Seeding..."
 
 puts "destroying all...."
-Owner.destroy_all
-MaintenanceRequest.destroy_all
 Unit.destroy_all
+MaintenanceRequest.destroy_all
+Owner.destroy_all
 puts "DESTROYED!"
+
+
+puts "seeding maintenance requests..."
+m1 = MaintenanceRequest.create(urgency: "low", description: "back porch light not working", expected_cost: 150.00, actual_cost: 5.29, date_opened: "2022-09-17", date_closed: nil, unit_id: u1.id )
+m2 = MaintenanceRequest.create(urgency: "medium", description: "freezer not staying cold", expected_cost: 250.00, actual_cost: 752.36, date_opened: '2022-10-16', date_closed: nil, unit_id: u2.id )
+m3 = MaintenanceRequest.create(urgency: "high", description: "front window glass broken", expected_cost: 100.00, actual_cost: 125.98, date_opened: '2022-01-09', date_closed: nil, unit_id: u3.id )
+m4 = MaintenanceRequest.create(urgency: "low", description: "lots of ants on back deck", expected_cost: 15.00, actual_cost: 15.00, date_opened: '2022-06-03', date_closed: nil, unit_id: u3.id )
+m5 = MaintenanceRequest.create(urgency: "medium", description: "gfci outlet in bathroom keeps resetting", expected_cost: 20.00, actual_cost: 20.00, date_opened: '2022-12-26', date_closed: nil, unit_id: u2.id )
+m6 = MaintenanceRequest.create(urgency: "high", description: "smoke coming from furnace", expected_cost: 500.00, actual_cost: 1385.69, date_opened: '2022-11-08', date_closed: nil, unit_id: u4.id)
+m7 = MaintenanceRequest.create(urgency: "low", description: "critter scurrying sound coming from attic", expected_cost: 40.00, actual_cost: 20.00, date_opened: '2022-09-17', date_closed: nil, unit_id: u5.id)
+m8 = MaintenanceRequest.create(urgency: "medium", description: "front storm door off hinges", expected_cost: 60.00, actual_cost: 20.25, date_opened: '2022-09-17', date_closed: nil, unit_id: u5.id)
+puts "MAINTENANCE REQS SEEDED"
 
 puts "seeding owners..."
 o1 = Owner.create(name: "Kyle Rieman", phone_number: "(111)-111-") #lets get faker gem involved here and in other places. perhaps money gem as well.
@@ -13,18 +25,6 @@ o3 = Owner.create(name: "Keith Strausser", phone_number: 1)
 o4 = Owner.create(name: "Clay Henry", phone_number: 1)
 o5 = Owner.create(name: "Bob Brady", phone_number: 1)
 puts "OWNERS seeded"
-
-puts "seeding maintenance requests..."
-m1 = MaintenanceRequest.create(urgency: "low", description: "back porch light not working", expected_cost: 150.00, actual_cost: 5.29, date_opened: "2022-09-17", date_closed: "2022-09-17" )
-m2 = MaintenanceRequest.create(urgency: "medium", description: "freezer not staying cold", expected_cost: 250.00, actual_cost: 752.36, date_opened: '2022-10-16', date_closed: '2022-10-16' )
-m3 = MaintenanceRequest.create(urgency: "high", description: "front window glass broken", expected_cost: 100.00, actual_cost: 125.98, date_opened: '2022-01-09', date_closed: '2022-01-09' )
-m4 = MaintenanceRequest.create(urgency: "low", description: "lots of ants on back deck", expected_cost: 15.00, actual_cost: 15.00, date_opened: '2022-06-03', date_closed: '2022-06-03' )
-m5 = MaintenanceRequest.create(urgency: "medium", description: "gfci outlet in bathroom keeps resetting", expected_cost: 20.00, actual_cost: 20.00, date_opened: '2022-12-26', date_closed: '2022-12-26' )
-m6 = MaintenanceRequest.create(urgency: "high", description: "smoke coming from furnace", expected_cost: 500.00, actual_cost: 1385.69, date_opened: '2022-11-08', date_closed: '2022-11-11' )
-m7 = MaintenanceRequest.create(urgency: "low", description: "critter scurrying sound coming from attic", expected_cost: 40.00, actual_cost: 20.00, date_opened: '2022-09-17', date_closed: '2022-09-17' )
-m8 = MaintenanceRequest.create(urgency: "medium", description: "front storm door off hinges", expected_cost: 60.00, actual_cost: 20.25, date_opened: '2022-09-17', date_closed: '2022-09-17' )
-puts "MAINTENANCE REQS SEEDED"
-
 
 puts "seeding units..."
 u1 = Unit.create(address: "123 Fake Street Columbia, MO 65203", current_tenant: "Jim Jones", open_request?: true, owner_id: o3.id, maintenancerequest_id: m1.id)
