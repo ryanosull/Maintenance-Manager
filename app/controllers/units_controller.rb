@@ -13,9 +13,9 @@ class UnitsControllers < ApplicationController
         units.to_json
     end
 
-    # get '/openrequests' do 
-    #     Unit.open_requests.to_json
-    # end
+    get '/openrequests' do 
+        Unit.open_requests.to_json
+    end
 
     #create
     post '/units' do

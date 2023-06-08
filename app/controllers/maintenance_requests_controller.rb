@@ -16,9 +16,10 @@ class MaintenanceRequestsControllers < ApplicationController
     end
 
     
-    get '/openrequests' do 
-        MaintenanceRequest.open_requests.to_json
-    end
+    # get '/openrequests' do 
+    #     MaintenanceRequest.open_requests.to_json
+    # end 
+        ######### delete me, probably
 
     #create
     # {"urgency"=>"high",                      params
