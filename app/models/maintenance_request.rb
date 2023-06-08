@@ -9,6 +9,9 @@ class MaintenanceRequest < ActiveRecord::Base
     # end
     ######### delete me, probably
 
+    def self.open_maint_reqs
+        self.all.where(date_closed: nil)
+    end
 
 
 

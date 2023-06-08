@@ -8,9 +8,16 @@ class Unit < ActiveRecord::Base
     #     Unit.create(unit_id: pizza)
     # end
 
-    def self.open_requests
+    def self.units_with_open_requests #will likely delete
         self.all.where(open_request?: true)
     end
+
+
+    def self.use_me
+        self.all.where(id: MaintenanceRequest.select(:unit_id))
+    end
+
+
 
 
 

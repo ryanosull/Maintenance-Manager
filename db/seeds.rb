@@ -39,21 +39,21 @@ u8 = Unit.create(address: "420 Pleasant St. Columbia, MO 65203", current_tenant:
 puts 'UNITS seeded'
 
 puts "seeding maintenance requests..."
-m1 = MaintenanceRequest.create(urgency: "low", description: "back porch light not working", expected_cost: 150.00, actual_cost: 5.29, date_opened: "2023-05-17", date_closed: nil, unit_id: u1.id )#
+m1 = MaintenanceRequest.create(urgency: "low", description: "back porch light not working", expected_cost: 150.35, actual_cost: 5.29, date_opened: "2023-05-17", date_closed: nil, unit_id: u1.id )#
 
-m2 = MaintenanceRequest.create(urgency: "medium", description: "freezer not staying cold", expected_cost: 250.00, actual_cost: 752.36, date_opened: '2023-02-16', date_closed: '2023-02-17', unit_id: u2.id )#
+m2 = MaintenanceRequest.create(urgency: "medium", description: "freezer not staying cold", expected_cost: 250.99, actual_cost: 752.36, date_opened: '2023-02-16', date_closed: '2023-02-17', unit_id: u2.id )#
 
-m3 = MaintenanceRequest.create(urgency: "high", description: "front window glass broken", expected_cost: 100.00, actual_cost: 125.98, date_opened: '2022-12-09', date_closed: nil, unit_id: u3.id )#
+m3 = MaintenanceRequest.create(urgency: "high", description: "front window glass broken", expected_cost: 100.01, actual_cost: 125.98, date_opened: '2022-12-09', date_closed: nil, unit_id: u3.id )#
 
-m4 = MaintenanceRequest.create(urgency: "low", description: "lots of ants on back deck", expected_cost: 15.00, actual_cost: 15.00, date_opened: '2022-11-03', date_closed: nil, unit_id: u3.id )
+m4 = MaintenanceRequest.create(urgency: "low", description: "lots of ants on back deck", expected_cost: 15.53, actual_cost: 15.50, date_opened: '2022-11-03', date_closed: nil, unit_id: u3.id )
 
-m5 = MaintenanceRequest.create(urgency: "medium", description: "gfci outlet in bathroom keeps resetting", expected_cost: 20.00, actual_cost: 20.00, date_opened: '2022-12-26', date_closed: nil, unit_id: u2.id )
+m5 = MaintenanceRequest.create(urgency: "medium", description: "gfci outlet in bathroom keeps resetting", expected_cost: 20.00, actual_cost: 20.99, date_opened: '2022-12-26', date_closed: nil, unit_id: u2.id )
 
-m6 = MaintenanceRequest.create(urgency: "high", description: "smoke coming from furnace", expected_cost: 500.00, actual_cost: 1385.69, date_opened: '2023-01-08', date_closed: nil, unit_id: u4.id)
+m6 = MaintenanceRequest.create(urgency: "high", description: "smoke coming from furnace", expected_cost: 500.69, actual_cost: 1385.69, date_opened: '2023-01-08', date_closed: nil, unit_id: u4.id)
 
-m7 = MaintenanceRequest.create(urgency: "low", description: "critter scurrying sound coming from attic", expected_cost: 40.00, actual_cost: 20.00, date_opened: '2023-02-17', date_closed: '2023-02-19', unit_id: u5.id)
+m7 = MaintenanceRequest.create(urgency: "low", description: "critter scurrying sound coming from attic", expected_cost: 40.20, actual_cost: 20.02, date_opened: '2023-02-17', date_closed: '2023-02-19', unit_id: u5.id)
 
-m8 = MaintenanceRequest.create(urgency: "medium", description: "front storm door off hinges", expected_cost: 60.00, actual_cost: 20.25, date_opened: '2023-03-17', date_closed: nil, unit_id: u5.id)
+m8 = MaintenanceRequest.create(urgency: "medium", description: "front storm door off hinges", expected_cost: 60.33, actual_cost: 20.25, date_opened: '2023-03-17', date_closed: nil, unit_id: u5.id)
 puts "MAINTENANCE REQS SEEDED"
 
 
