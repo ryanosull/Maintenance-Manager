@@ -12,9 +12,6 @@ class Unit < ActiveRecord::Base
         self.all.where(open_request?: true)
     end
 
-    # def self.use_me
-    #     self.all.where(Unit.all.id === MaintenanceRequest.unit_id)
-    # end
 
     def self.use_me
         self.all.where(id: MaintenanceRequest.select(:unit_id))
