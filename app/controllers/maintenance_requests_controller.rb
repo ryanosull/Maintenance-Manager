@@ -16,6 +16,10 @@ class MaintenanceRequestsControllers < ApplicationController
     end
 
     
+    # get '/openmaintreqs'
+
+
+    
     # get '/openrequests' do 
     #     MaintenanceRequest.open_requests.to_json
     # end 

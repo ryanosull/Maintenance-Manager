@@ -13,7 +13,7 @@ class UnitsControllers < ApplicationController
         units.to_json
     end
 
-    get '/openrequests' do 
+    get '/unitswithopenrequests' do 
         Unit.units_with_open_requests.to_json
     end
 
