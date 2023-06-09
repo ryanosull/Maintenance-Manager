@@ -44,7 +44,7 @@ class MaintenanceRequestsControllers < ApplicationController
     #update
     patch '/maintenancerequests/:id' do
         maintreqs = MaintenanceRequest.find(params[:id])
-        maintreqs.update(urgency: params[:urgency], description: params[description], expected_cost: params[:expected_cost], actual_cost: params[:actual_cost], date_opened: params[:date_opened], date_closed: params[:date_closed])
+        maintreqs.update(urgency: params[:urgency], description: params[:description], expected_cost: params[:expected_cost], actual_cost: params[:actual_cost], date_opened: params[:date_opened], date_closed: params[:date_closed])
         maintreqs.to_json
     end
 
