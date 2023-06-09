@@ -2,6 +2,7 @@
 `bundle exec rake server`
 
 `rake console`
+`rake db:reset`
 
 
 ### backend adjustments
